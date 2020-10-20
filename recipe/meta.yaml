@@ -47,17 +47,18 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=pamr
-  license: GPL-2
+  license: GPL-2.0-only
   summary: Some functions for sample classification in microarrays.
   license_family: GPL2
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
+    - conda-forge/r
     - MathiasHaudgaard
     - FrodePedersen
     - ArneKr
-    - conda-forge/r
 
 # Package: pamr
 # Title: Pam: Prediction Analysis for Microarrays
