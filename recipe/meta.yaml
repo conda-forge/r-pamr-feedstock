@@ -1,4 +1,4 @@
-{% set version = '1.56.1' %}
+{% set version = "1.56.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/pamr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/pamr/pamr_{{ version }}.tar.gz
-  sha256: d0e527f2336ee4beee91eefb2a8f0dfa96413d9b5a5841d6fc7ff821e67c9779
+  sha256: 29046c761d1999f34c6eb69cab5484985cc5c309e3e9d60891cf36d5febbfc58
 
 build:
-  merge_build_host: True  # [win]
-  number: 6
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -22,7 +22,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}              # [not win]
+    - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ stdlib("c") }}                # [win]
     - {{ compiler('fortran') }}        # [not win]
     - {{ compiler('m2w64_fortran') }}  # [win]
     - {{ posix }}filesystem        # [win]
