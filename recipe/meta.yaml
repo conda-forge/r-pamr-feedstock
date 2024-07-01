@@ -1,4 +1,4 @@
-{% set version = "1.56.2" %}
+{% set version = "1.57" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/pamr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/pamr/pamr_{{ version }}.tar.gz
-  sha256: 29046c761d1999f34c6eb69cab5484985cc5c309e3e9d60891cf36d5febbfc58
+  sha256: 01968f7620f1a5e4be1ce666f7ff52211b9dcf6cf5948112c7441aabae56af3d
 
 build:
   merge_build_host: true  # [win]
