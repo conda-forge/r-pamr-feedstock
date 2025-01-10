@@ -12,7 +12,7 @@ source:
   sha256: 01968f7620f1a5e4be1ce666f7ff52211b9dcf6cf5948112c7441aabae56af3d
 
 build:
-  number: 1
+  number: 2
   rpaths:
     - lib/R/lib/
     - lib/
@@ -30,6 +30,9 @@ requirements:
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+    - r-cluster                    # [build_platform != target_platform]
+    - r-survival                   # [build_platform != target_platform]
   host:
     - r-base
     - r-cluster
@@ -48,7 +51,6 @@ about:
   home: https://CRAN.R-project.org/package=pamr
   license: GPL-2.0-only
   summary: Some functions for sample classification in microarrays.
-  license_family: GPL2
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
